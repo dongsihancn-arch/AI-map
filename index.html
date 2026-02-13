@@ -3,62 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <style>
-      .tree { text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fff; padding: 30px; }
-      .tree ul { padding-top: 20px; position: relative; display: flex; justify-content: center; }
-      .tree li { list-style-type: none; position: relative; padding: 20px 10px 0 10px; }
-      .tree li::before,.tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #ddd; width: 50%; height: 20px; }
-      .tree li::after { right: auto; left: 50%; border-left: 2px solid #ddd; }
-      .tree li:only-child::after,.tree li:only-child::before { display: none; }
-      .tree li:only-child { padding-top: 0; }
-      .tree li:first-child::before,.tree li:last-child::after { border: 0 none; }
-      .tree li:last-child::before { border-right: 2px solid #ddd; border-radius: 0 5px 0 0; }
-      .tree li:first-child::after { border-radius: 5px 0 0 0; }
-      .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #ddd; width: 0; height: 20px; }
-      .box { border: 2px solid #ddd; padding: 10px 15px; border-radius: 8px; background: #fdfdfd; display: inline-block; min-width: 120px; }
-      .box strong { display: block; color: #2c3e50; margin-bottom: 5px; }
-      .tag { font-size: 11px; padding: 2px 6px; border-radius: 4px; color: #fff; text-transform: uppercase; }
-       /* 颜色标识 */
-      .root { border-color: #34495e; background: #ebf2f9; }
-      .paradigm-d { background: #e8f5e9; border-color: #4caf50; } /* 判别式 */
-      .paradigm-g { background: #fff3e0; border-color: #ff9800; } /* 生成式 */
-      .arch { background: #f3e5f5; border-color: #9c27b0; } /* 架构层 */
-      .tag-d { background: #4caf50; }
-      .tag-g { background: #ff9800; }
+       .tree { text-align: center; font-family: sans-serif; background: #f9f9f9; padding: 20px; }
+       .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; display: flex; justify-content: center; }
+       .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+       .tree li::before,.tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 1px solid #ccc; width: 50%; height: 20px; }
+       .tree li::after { right: auto; left: 50%; border-left: 1px solid #ccc; }
+       .tree li:only-child::after,.tree li:only-child::before { display: none; }
+       .tree li:only-child { padding-top: 0; }
+       .tree li:first-child::before,.tree li:last-child::after { border: 0 none; }
+       .tree li:last-child::before { border-right: 1px solid #ccc; border-radius: 0 5px 0 0; }
+       .tree li:first-child::after { border-radius: 5px 0 0 0; }
+       .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 1px solid #ccc; width: 0; height: 20px; }
+       .tree a { border: 1px solid #ccc; padding: 8px 12px; text-decoration: none; color: #333; font-size: 13px; display: inline-block; border-radius: 5px; background: white; transition: all 0.5s; font-weight: bold; }
+       .tree a:hover { background: #e9453a; color: #fff; border: 1px solid #e9453a; }
+       .tag { font-size: 10px; color: #666; display: block; font-weight: normal; margin-top: 4px; }
+       .highlight { background: #fff3f3; border-color: #e9453a; }
     </style>
 </head>
 <body>
     <div class="tree">
         <ul>
             <li>
-                <div class="box root"><strong>人工智能 (AI)</strong></div>
+                <a href="#">人工智能 (Artificial Intelligence)<span class="tag">顶层定义</span></a>
                 <ul>
                     <li>
-                        <div class="box"><strong>符号主义</strong><br><small>If-Then 逻辑</small></div>
+                        <a href="#">符号主义 (Symbolism)<span class="tag">模拟逻辑/系统2</span></a>
                         <ul>
-                            <li><div class="box paradigm-d"><strong>专家系统</strong><span class="tag tag-d">判别</span></div></li>
+                            <li><a href="#">专家系统 (Expert Systems)<span class="tag">If-Then 规则 (如 MYCIN)</span></a></li>
+                            <li><a href="#">知识图谱 (Knowledge Graphs)<span class="tag">结构化语义网络</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <div class="box"><strong>联结主义</strong><br><small>神经网络/深度学习</small></div>
+                        <a href="#" class="highlight">联结主义 (Connectionism)<span class="tag">模拟神经/系统1</span></a>
                         <ul>
                             <li>
-                                <div class="box paradigm-d"><strong>判别式 AI (Discriminative)</strong><br><small>目标：分类与预测</small></div>
+                                <a href="#">机器学习 (Machine Learning)<span class="tag">统计规律发现</span></a>
                                 <ul>
-                                    <li><div class="box arch"><strong>CNN (卷积网)</strong><br><small>视觉识别</small></div></li>
-                                    <li><div class="box arch"><strong>RNN/LSTM</strong><br><small>序列分析</small></div></li>
-                                    <li><div class="box arch"><strong>Transformer-Encoder</strong><br><small>语义理解 (如 BERT)</small></div></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="box paradigm-g"><strong>生成式 AI (Generative)</strong><br><small>目标：创造内容</small></div>
-                                <ul>
-                                    <li><div class="box arch"><strong>Diffusion (扩散)</strong><br><small>图像/视频生成</small></div></li>
-                                    <li><div class="box arch"><strong>GAN (对抗网)</strong><br><small>数据合成</small></div></li>
-                                    <li><div class="box arch"><strong>LLM (Transformer-Decoder)</strong><br><small>文本创作 (如 GPT)</small></div></li>
+                                    <li>
+                                        <a href="#">多层神经网络 (MLP)<span class="tag">隐藏层结构</span></a>
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="highlight">深度学习 (Deep Learning)<span class="tag">深层堆叠架构</span></a>
+                                                <ul>
+                                                    <li><a href="#">CNN (卷积网络)<span class="tag">图像空间特征</span></a></li>
+                                                    <li><a href="#">RNN / LSTM<span class="tag">序列/时间戳特征</span></a></li>
+                                                    <li>
+                                                        <a href="#" class="highlight">Transformer<span class="tag">自注意力机制/并行化</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">LLM (大语言模型)<span class="tag">GPT, Claude, Llama</span></a>
+                                                                <ul>
+                                                                    <li><a href="#">智能代理 (Agentic AI)<span class="tag">自主规划与执行</span></a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Diffusion (扩散模型)<span class="tag">逆向去噪/视觉生成</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <li><a href="#">神经符号 AI (Neuro-Symbolic)<span class="tag">逻辑与直觉的融合 (混合范式)</span></a></li>
                 </ul>
             </li>
         </ul>
