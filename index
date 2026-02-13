@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+       .tree { text-align: center; font-family: sans-serif; background: #f9f9f9; padding: 20px; }
+       .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; display: flex; justify-content: center; }
+       .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+       .tree li::before,.tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 1px solid #ccc; width: 50%; height: 20px; }
+       .tree li::after { right: auto; left: 50%; border-left: 1px solid #ccc; }
+       .tree li:only-child::after,.tree li:only-child::before { display: none; }
+       .tree li:only-child { padding-top: 0; }
+       .tree li:first-child::before,.tree li:last-child::after { border: 0 none; }
+       .tree li:last-child::before { border-right: 1px solid #ccc; border-radius: 0 5px 0 0; }
+       .tree li:first-child::after { border-radius: 5px 0 0 0; }
+       .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 1px solid #ccc; width: 0; height: 20px; }
+       .tree a { border: 1px solid #ccc; padding: 8px 12px; text-decoration: none; color: #333; font-size: 13px; display: inline-block; border-radius: 5px; background: white; transition: all 0.5s; font-weight: bold; }
+       .tree a:hover { background: #e9453a; color: #fff; border: 1px solid #e9453a; }
+       .tag { font-size: 10px; color: #666; display: block; font-weight: normal; margin-top: 4px; }
+       .highlight { background: #fff3f3; border-color: #e9453a; }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="#">人工智能 (Artificial Intelligence)<span class="tag">顶层定义</span></a>
+                <ul>
+                    <li>
+                        <a href="#">符号主义 (Symbolism)<span class="tag">模拟逻辑/系统2</span></a>
+                        <ul>
+                            <li><a href="#">专家系统 (Expert Systems)<span class="tag">If-Then 规则 (如 MYCIN)</span></a></li>
+                            <li><a href="#">知识图谱 (Knowledge Graphs)<span class="tag">结构化语义网络</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="highlight">联结主义 (Connectionism)<span class="tag">模拟神经/系统1</span></a>
+                        <ul>
+                            <li>
+                                <a href="#">机器学习 (Machine Learning)<span class="tag">统计规律发现</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="#">多层神经网络 (MLP)<span class="tag">隐藏层结构</span></a>
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="highlight">深度学习 (Deep Learning)<span class="tag">深层堆叠架构</span></a>
+                                                <ul>
+                                                    <li><a href="#">CNN (卷积网络)<span class="tag">图像空间特征</span></a></li>
+                                                    <li><a href="#">RNN / LSTM<span class="tag">序列/时间戳特征</span></a></li>
+                                                    <li>
+                                                        <a href="#" class="highlight">Transformer<span class="tag">自注意力机制/并行化</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">LLM (大语言模型)<span class="tag">GPT, Claude, Llama</span></a>
+                                                                <ul>
+                                                                    <li><a href="#">智能代理 (Agentic AI)<span class="tag">自主规划与执行</span></a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Diffusion (扩散模型)<span class="tag">逆向去噪/视觉生成</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">神经符号 AI (Neuro-Symbolic)<span class="tag">逻辑与直觉的融合 (混合范式)</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
